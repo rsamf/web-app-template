@@ -14,7 +14,7 @@ var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 80;
 var mongourl = process.env.DATABASEURL || "mongodb://sammy:secretsecret0128910@ds021969.mlab.com:21969/web-app-template";
 
 mongoose.connect(mongourl);
