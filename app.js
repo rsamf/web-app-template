@@ -14,8 +14,8 @@ var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
+//url: mongodb://sammy:secretsecret1238910@ds021299.mlab.com:21299/personal
 mongoose.connect(process.env.DATABASEURL || "mongodb://localhost/yelp_camp");
-//mongoose.connect("mongodb://sammy:secretsecret1238910@ds021299.mlab.com:21299/personal");
 //seedDB();
 
 app.set("view engine", "ejs");
@@ -49,6 +49,6 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 
 
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(process.env.PORT || 8080, function(){
     console.log("Server running on", this.address().port);
 });
